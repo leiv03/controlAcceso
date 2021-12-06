@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/registro', [App\Http\Controllers\UsuarioController::class, "Registrarse"]);
-Route::post('/login', [App\Http\Controllers\UsuarioController::class, "Login"]);
-Route::post('/IngresarPuerta', [App\Http\Controllers\PuertaController::class, "IngresarPuerta"]);
+Route::post('/registro', [App\Http\Controllers\UsuarioController::class, "registrarse"]);
+Route::post('/login', [App\Http\Controllers\UsuarioController::class, "login"]);
+Route::post('/IngresarPuerta', [App\Http\Controllers\PuertaController::class, "ingresarPuerta"]);

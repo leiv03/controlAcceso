@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $connection='tarea';
-    protected $table='user';
+    protected $connection='controldeacceso';
+    protected $table='usuario';
     protected $primaryKey = "ci";
     public $timestamps=false;
 }

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class UserIngresado extends Model
 {
     protected $connection='mysql';
-    protected $table='usuario';
-    protected $primaryKey = "ci";
+    protected $table='useringresado';
+    protected $primaryKey = "fecha";
     public $timestamps=false;
 }

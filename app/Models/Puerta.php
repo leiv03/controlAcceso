@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Puerta extends Model
 {
-    protected $connection='controldeacceso';
+    protected $connection='mysql';
     protected $table='puerta';
     protected $primaryKey = "codigoPuerta";
     public $timestamps=false;

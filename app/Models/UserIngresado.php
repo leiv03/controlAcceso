@@ -8,6 +8,6 @@ class UserIngresado extends Model
 {
     protected $connection='mysql';
     protected $table='useringresado';
-    protected $primaryKey = "fecha";
+    protected $primaryKey = "id";
     public $timestamps=false;
 }

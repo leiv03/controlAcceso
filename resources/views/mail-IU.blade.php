@@ -8,6 +8,6 @@
 </head>
 <body>
     <h3>Ingresando Puerta</h3>
-    <p>Has ingresado a la puerta ...</p>
+    <p>Has ingresado a la puerta {{$puerta}}</p>
 </body>
 </html>

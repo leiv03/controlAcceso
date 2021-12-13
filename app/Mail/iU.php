@@ -10,15 +10,16 @@ use Illuminate\Queue\SerializesModels;
 class iU extends Mailable
 {
     use Queueable, SerializesModels;
+    public $puerta;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($puerta)
     {
-        //
+        $this->puerta = $puerta;
     }
 
     /**

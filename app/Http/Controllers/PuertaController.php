@@ -27,8 +27,8 @@ class PuertaController extends ApiController
     public function ingresarUsuario(Request $request){
 
         $validatedData = Validator::make($request->all(), [
-            'ci' => 'required|max:9',
-            'codigoPuerta' => 'required|max:4',
+            'ci' => 'required|max:9|exists:usuario,ci',
+            'codigoPuerta' => 'required|max:4|exists:puerta,codigoPuerta',
         ]);
         
         if ($validatedData->fails())
@@ -41,9 +41,8 @@ class PuertaController extends ApiController
         $ingreso->codigoPuerta= $request->input('codigoPuerta');
         $ingreso->save();
 
-        $mail = new iU;
         $usuario = User::find($ingreso->ci);
-        Mail::to($usuario->mail)->send($mail);
+        Mail::to($usuario->mail)->send(new iU($ingreso->codigoPuerta));
         return($this->sendResponse([], "Ingreso correctamente", 201));
     }
 }

@@ -33,7 +33,6 @@ class UsuarioController extends ApiController
         $user->save();
 
         $mail = new prueba;
-
         Mail::to($user->mail)->send($mail);
         return($this->sendResponse([], "Se ha creado su cuenta correctamente", 200));
     }

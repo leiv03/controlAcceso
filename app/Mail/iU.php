@@ -17,6 +17,7 @@ class iU extends Mailable
      *
      * @return void
      */
+    //la variable que esta en constructor es para almacenarla en la view
     public function __construct($puerta)
     {
         $this->puerta = $puerta;
@@ -29,6 +30,7 @@ class iU extends Mailable
      */
     public function build()
     {
+        //envia por mail esta vista 
         return $this->view('mail-IU');
     }
 }

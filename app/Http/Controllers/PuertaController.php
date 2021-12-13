@@ -15,6 +15,8 @@ class PuertaController extends ApiController
 {
     public function IngresarPuerta(Request $request)
     {
+
+        //obtengo la data del request y la guardo en las variables
         $puerta = new Puerta();
         $puerta->nombre = $request->input('nombre');
         $puerta->descripcion = $request->input('descripcion');
@@ -26,11 +28,12 @@ class PuertaController extends ApiController
 
     public function ingresarUsuario(Request $request){
 
+        //valido dos variables del request 
         $validatedData = Validator::make($request->all(), [
             'ci' => 'required|max:9|exists:usuario,ci',
             'codigoPuerta' => 'required|max:4|exists:puerta,codigoPuerta',
         ]);
-        
+        //en caso de que falle tira error 
         if ($validatedData->fails())
         {
             return($this->sendError("ci o pin incorrectos", [], 400));
